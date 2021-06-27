@@ -1,0 +1,45 @@
+version: "3"
+services:
+  userinterface:
+    image: userinterface
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - mynet
+  authentication:
+    image: authentication
+    stdin_open: true
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - mynet
+  crud:
+    image: crud
+    stdin_open: true
+    ports:
+      - "9000:9000"
+    depends_on:
+      - mongo
+    networks:
+      - mynet
+  feedbacks:
+    image: feedbacks
+    stdin_open: true
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    networks:
+      - mynet         
+  mongo:
+    image: mongo:3.6.19-xenial
+    ports:
+      - "27017:27017"
+    networks:
+      - mynet 
+networks:
+  mynet:
+    driver: bridge

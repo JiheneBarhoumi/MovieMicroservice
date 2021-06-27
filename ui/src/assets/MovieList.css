@@ -1,0 +1,22 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5%;
+    margin-bottom:5%;
+    
+ 
+}
+
+.card{
+    cursor: pointer;
+    transition:0.4s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.1);
+    transition:0.4s ease-in-out;
+    -webkit-box-shadow: 11px 13px 26px -15px rgba(0,0,0,0.75);
+-moz-box-shadow: 11px 13px 26px -15px rgba(0,0,0,0.75);
+box-shadow: 11px 13px 26px -15px rgba(0,0,0,0.75);
+
+}
